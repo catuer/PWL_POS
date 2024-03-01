@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\kategoriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/level', [LevelController::class, 'index']);
+Route::get('/kategori', [kategoriController::class, 'index']);
