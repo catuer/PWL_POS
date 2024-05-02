@@ -23,7 +23,7 @@
                             <select class="form-control" id="level_id" name="level_id" required>
                                 <option value="">- Semua -</option>
                                 @foreach($level as $item)
-                                    <option value="{{ $item->level_id }}">{{ $item->level_name }}</option>
+                                    <option value="{{ $item->level_id }}">{{ $item->level_nama }}</option>
                                 @endforeach
                             </select>
                             <small class="form-text text-muted">Level Pengguna</small>
@@ -79,7 +79,7 @@
                 orderable: true, // orderable: true, jika ingin kolom ini bisa diurutkan
                 searchable: true // searchable: true, jika ingin kolom ini bisa dicari
                 },{
-                data: "level.level_name",
+                data: "level.level_nama",
                 className: "",
                 orderable: false, // orderable: true, jika ingin kolom ini bisa diurutkan
                 searchable: false // searchable: true, jika ingin kolom ini bisa dicari

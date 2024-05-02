@@ -49,16 +49,16 @@ Route::group(['prefix' => 'user'],function(){
     Route::put('/{id}', [UserController::class, 'update']);
     Route::delete('/{id}', [UserController::class, 'destroy']);
 });
-Route::group(['prefix' => 'stok'], function () {
+Route::group(['prefix' => 'stok'],function(){
     Route::get('/', [StokController::class, 'index']);
-    Route::post('/list', [StokController::class, 'list']); // Added for listing
+    Route::post('/list', [StokController::class, 'list']);
     Route::get('/create', [StokController::class, 'create']);
     Route::post('/', [StokController::class, 'store']);
     Route::get('/{id}', [StokController::class, 'show']);
     Route::get('/{id}/edit', [StokController::class, 'edit']);
     Route::put('/{id}', [StokController::class, 'update']);
     Route::delete('/{id}', [StokController::class, 'destroy']);
-});  
+});
 Route::group(['prefix' => 'barang'], function () {
     Route::get('/', [BarangController::class, 'index']);  //menampilkan halaman awal user
     Route::post('/list', [BarangController::class, 'list']);  //menampilkan data user dalam benttuk json untuk datatables

@@ -9,7 +9,7 @@ use App\Models\UserModel;
 use Yajra\DataTables\DataTables;
 
 class StokController extends Controller
-{
+{ 
     public function index()
     {
         $breadcrumb = (object) [
@@ -31,7 +31,7 @@ class StokController extends Controller
     }
     public function list(Request $request) {
         $stoks = StokModel::select(
-            'stok_id',
+            'id',
             'barang_id',
             'user_id',
             'stok_tanggal',
