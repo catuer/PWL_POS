@@ -52,6 +52,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(),[
             'nama' =>'required',
             'username' => 'required|unique:m_user',
+            'password' => 'required'
         ]);
         if($validator->fails()){
             return redirect('/register')
