@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Monolog\Level;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 
-class UserModel extends Authenticatable
+class UserModel extends Authenticatable implements JWTSubject
 {
     public function getJWTIdentifier(){
         return $this->getKey();
@@ -18,7 +19,7 @@ class UserModel extends Authenticatable
         return [];
     }
     
-    //use HasFactory;
+    use HasFactory;
     protected $table = 'm_user';
     protected $primaryKey = 'user_id';
     protected $fillable =[
@@ -28,7 +29,7 @@ class UserModel extends Authenticatable
         'password'
     ];
     public function level(): BelongsTo{
-        return $this->BelongsTo(LevelModel::class, 'level_id', 'level_id');
+        return $this->belongsTo(LevelModel::class, 'level_id', 'level_id');
     }
 }
 

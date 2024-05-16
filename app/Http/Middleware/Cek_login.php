@@ -16,7 +16,7 @@ class Cek_login
      */
     public function handle(Request $request, Closure $next, $roles): Response
     {
-        if (Auth::check()){
+        if (!Auth::check()){
             return redirect('login');
         }
         $user = Auth::user();
