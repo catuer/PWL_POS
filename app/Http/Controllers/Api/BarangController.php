@@ -32,6 +32,7 @@ class BarangController extends Controller
         return response()->json([
         'success' => true,
         'message' => 'Data Terhapus'
+        
         ]);
     }
 }
